@@ -1,0 +1,1265 @@
+/* Start Price */
+.start_price {
+  font-size: 20pt;
+  color: white;
+}
+
+/* details product */
+.details__caption li{
+  font-size: 16px;
+}
+
+    #mapPreview {
+      height: 200px;
+      width: 100%;
+      border-radius: 8px;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      -ms-border-radius: 8px;
+      -o-border-radius: 8px;
+}
+
+#startBtn {
+      position: absolute;
+      top: 550px;
+      left: 40px;
+      z-index: 1000;
+      padding: 10px 15px;
+      background: white;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #exitBtn {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#exitBtn:hover {
+  background: white;
+  transform: translateX(-50%) scale(1.03);
+}
+
+
+    /* #startBtn.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+#startBtn.loading::after {
+  content: '';
+  margin-left: 10px;
+  border: 3px solid #ccc;
+  border-top: 3px solid #333;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  animation: spin 0.8s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+ */
+
+ .modal {
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background-color: #fff;
+  width: 90%;               /* Responsive lebar */
+  max-width: 600px;         /* Maksimum lebar tetap */
+  max-height: 90vh;         /* Tidak lebih dari 90% tinggi layar */
+  padding: 20px;
+  border-radius: 10px;
+  overflow-y: auto;         /* Scroll jika konten terlalu panjang */
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+
+.modal.show .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.close {
+  position: absolute;
+  top: 1px;
+  right: 5px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.map-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.76);
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.map-loading-content {
+  text-align: center;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  align-items: center;
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  border-top: 6px solid #00ffcc;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.glow-text {
+  font-size: 18px;
+  color: #fff;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 15px #00ffff;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+  from {
+    text-shadow:
+      0 0 5px #00ffff,
+      0 0 10px #00ffff,
+      0 0 15px #00ffff;
+  }
+  to {
+    text-shadow:
+      0 0 10px #00ffff,
+      0 0 20px #00ffff,
+      0 0 30px #00ffff;
+  }
+}
+
+/* Select Date Text */
+p.selectdate_text {
+  font-size: 14pt;
+  color: white;
+  font-weight: 600;
+  text-shadow: 1px 1px 4px #101010;
+  -moz-text-shadow: 1px 1px 4px #101010;
+  -webkit-text-shadow: 1px 1px 4px #101010;
+}
+
+input.selectdate_input {
+  width: 330px;
+}
+
+/* Search Container */
+.search_container {
+  background-color: #87CEEB;
+  border-radius: 20px;
+}
+
+/* Start From Container */
+.start_from_container {
+  color: white;
+  padding-top: 130px;
+  font-weight: 600;
+  font-size: 20px;
+  text-shadow: 1px 1px 2px #101010;
+}
+
+/* Sidebar Styling */
+.side-bar, .side-bar-mobile {
+  width: auto;
+  border-radius: 20px;
+  background-color: #F5F5F5;
+}
+
+#tanggal::placeholder {
+  color: black;
+  opacity: 1;
+}
+
+.flatpickr-day.selected, 
+.flatpickr-day.selected:hover {
+  background: #87CEEB !important; /* Ganti dengan warna yang lo mau */
+  border-color: #87CEEB !important;
+  color: white !important; /* Warna teks */
+}
+
+/* read more */
+.side-bar-container {
+  /* background: #f9f9f9; */
+  background: linear-gradient(to bottom, 
+  rgba(224, 247, 250, 0) 0%, 
+  rgba(224, 247, 250, 0.5) 80%, 
+  #87CEEB 100%);  
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: auto;
+}
+.text {
+  max-height: 900px;
+  overflow: hidden;
+  position: relative;
+  padding-right: 10px;
+  transition: max-height 0.5s ease;
+  
+}
+
+.text.expanded {
+  overflow-y: auto;
+}
+
+
+#fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 99;
+  pointer-events: none;
+}
+
+
+.fade {
+  height: 50px;
+  /* background: linear-gradient(to bottom, transparent, white); sesuaikan background */
+  margin-top: -50px;
+  position: relative;
+}
+  
+.hidden {
+  display: none !important;
+}
+.read-more {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #fafafa;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Wrapper untuk kalender */
+.calendar-wrap {
+  padding-top: 15px;
+  display: flex;
+  gap: 20px; /* Kasih jarak antar kalender */
+  flex-wrap: wrap; /* Agar responsive kalau layar kecil */
+}
+
+.calendar-wrapper {
+  width: 790px;
+  padding: 20px;
+  border-radius: 16px;
+  background: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+.calendar-header h2 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 4px;
+  color: #000;
+}
+
+.calendar-header p {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 16px;
+}
+
+.calendar-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-items: end;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.calendar-inputs label {
+  font-size: 14px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  padding-right: 5px;
+}
+
+.calendar-inputs input {
+  width: 130px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.calendar-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 66px;
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease ;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.clear-btn:hover{
+  background-color:#f0f0f0;
+  
+}
+
+.clear-btn {
+  color: #666;
+}
+
+.date-input,
+.qty {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.btn-clear {
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.btn-icon-text {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.responsive-calendar-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+
+/* Sesuaikan lebar card calendar agar sejajar dengan container luar */
+.select-dates-card {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* --- GENERAL KALENDER STYLE --- */
+/* .calendar-container .flatpickr-calendar.inline {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 0;
+  transform: scale(1.2);
+  transform-origin: top left;
+  background-color: #fff;
+} */
+
+/* Atur flatpickr agar full width */
+.flatpickr-calendar.inline {
+  width: 100% !important;
+  min-width: 650px !important;
+  box-sizing: border-box;
+  padding: 1rem;
+  transform: scale(1.25);
+  transform-origin: top left;
+  border: none;
+  border-radius: 10px;
+}
+
+.calendar-container .flatpickr-calendar {
+  width: 750px !important;
+}
+
+.calendar-container .flatpickr-innerContainer {
+  display: flex;
+  gap: 20px; /* Jarak antar bulan jika 2 bulan ditampilkan */
+}
+
+.calendar-container .flatpickr-days {
+  width: 750px !important;
+}
+
+.flatpickr-days {
+  padding: 8px !important;
+}
+
+.calendar-container .dayContainer {
+  width: 705px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 25px;
+  box-sizing: border-box;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* --- WEEKDAYS STYLE --- */
+.calendar-container .flatpickr-calendar .flatpickr-weekdays {
+  display: none !important;
+}
+
+.calendar-container .flatpickr-calendar .flatpickr-weekday {
+  display: none !important;
+  width: 35px;
+  text-align: center;
+  font-weight: 400;
+  color: #000;
+}
+
+span.flatpickr-weekday {
+  display: none !important;
+  font-size: 80% !important;
+  font-weight: 400 !important;
+}
+
+/* --- CURRENT MONTH + YEAR --- */
+.flatpickr-current-month span.cur-month,
+.flatpickr-current-month input.cur-year {
+  font-weight: 600 !important;
+  font-size: 15px !important;
+}
+
+/* --- TANGGAL STYLE --- */
+.calendar-container .flatpickr-day {
+  position: relative; /* penting agar .flatpickr-price bisa absolute */
+  width: 35px;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 1 !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.calendar-container .flatpickr-day:hover {
+  background-color: transparent;
+  border: 1px solid #87CEEB;
+  border-radius: 8px;
+}
+
+/* --- RANGE SELECTION --- */
+.calendar-container .flatpickr-day.selected,
+.calendar-container .flatpickr-day.startRange,
+.calendar-container .flatpickr-day.endRange {
+  background-color: #87CEEB !important;
+  color: white !important;
+  border-radius: 8px !important;
+}
+
+.calendar-container .flatpickr-day.inRange {
+  background-color: white !important;
+  border: 1px solid #87CEEB !important;
+  border-radius: 8px;
+}
+
+.calendar-container .flatpickr-day.inRange:hover {
+  background-color: #6fc3e3 !important;
+  color: white !important;
+}
+
+.flatpickr-day.inRange {
+  border-radius: 0;
+  -webkit-box-shadow: -5px 0 0 #e6e6e6, 5px 0 0 #e6e6e6 !important;
+  box-shadow: -5px 0 0 #F5F5F5, 5px 0 0 #F5F5EF !important;
+  background-color: #F5F5F5 !important;
+  border-color: #F5F5EF !important;
+}
+
+/* --- KHUSUS UNTUK BULAT DI AWAL DAN AKHIR RANGE --- */
+.calendar-container .flatpickr-day.startRange {
+  border-radius: 20px 0 0 20px !important;
+}
+
+.calendar-container .flatpickr-day.endRange {
+  border-radius: 0 20px 20px 0 !important;
+}
+
+/* --- HARI INI --- */
+.calendar-container .flatpickr-day.today {
+  border-color: transparent;
+}
+
+/* --- HARGA DI BAWAH TANGGAL --- */
+/* .calendar-container .flatpickr-day .flatpickr-price {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  font-size: 8px;
+  color: green;
+  line-height: 1;
+  pointer-events: none;
+  text-align: center;
+} */
+
+.flatpickr-day {
+  position: relative;
+  font-size: 13px;
+}
+
+.flatpickr-price {
+  position: absolute;
+  /* bottom: 2px; */
+  /* margin-top: 5px; */
+  top: 50%;
+  left: -50%;
+  width: 200%;
+  font-size: 7px;
+  color: green;
+  text-align: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* tabs */
+.nav-tabs {
+  border-bottom: 2px solid #c0c0c0 !important;
+}
+
+a.nav-link {
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #4B944D;
+    border-bottom: 3px solid #4B944D;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.card-review {
+  border-radius: 10px;
+  border: none;
+}
+
+.review-full,
+.review-short {
+  transition: all 0.3s ease;
+}
+
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active.show {
+  display: block;
+}
+
+.read-more-toggle {
+  color: #4B944D !important;
+  font-weight: 500;
+  text-decoration: underline !important;
+}
+
+.card-reply {
+  display: flex;
+  align-items: start;
+  gap: 5px;
+  background: #f0fff0; 
+  border-radius: 15px;
+}
+
+.card-reply i {
+  transform: scaleX(-1); 
+  display: inline-block; 
+  font-size: 28px; 
+  color: #4B944D;
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+  /* Gallery Layout */
+  .gallery-layout {
+      display: flex;
+      flex-wrap: wrap;
+      /* gap: 13px; */
+      max-height: 400px;
+      justify-content: center;
+  }
+
+  .gallery-layout.gambar-2-khusus .gallery-item {
+    width: 48%;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .gallery-layout.gambar-2-khusus {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    justify-content: center;
+    max-height: 400px;
+  }
+
+  /* Layout for 1 image */
+  .gallery-layout.gambar-1 .gallery-item {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+  }
+
+  /* Layout for 2 images */
+  .gallery-layout.gambar-2 .gallery-item {
+      width: 48%;
+      height: 400px;
+      overflow: hidden;
+  }
+
+  /* Layout for 3 images */
+  .gallery-layout.gambar-3 .gallery-item {
+      width: 32%;
+      height: 400px;
+      overflow: hidden;
+  }
+
+  .gallery-item img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+  }
+  
+  .gallery-item video {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+  }
+
+  .gallery-video {
+      box-shadow: 0 0 10px rgba(255, 82, 82, 0.5);
+      border-radius: 16px;
+    }
+    
+
+  .gallery-item .extra-images {
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+  }
+
+  .gallery-item {
+      position: relative;
+  }
+
+  /* Hides images 4 and onward */
+  .gallery-item:nth-child(n+4) {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      pointer-events: none;
+  }
+
+  /* Keeps all images visible in GLightbox */
+  [data-glightbox="gallery"] {
+      display: block;
+  }
+
+  /* Availability Section */
+  .check-availability {
+      width: 20%;
+      height: 400px;
+  }
+
+  #mobileCarousel {
+      display: none;
+  }
+
+  .side-bar-mobile {
+      display: none;
+  }
+
+  .row.row-mobile{
+      display: none;
+  }
+
+  .faq-section .btn-link:not(.collapsed) {
+      background-color: #87CEEB; /* Warna latar belakang saat active */
+      color: #fff; /* Warna teks saat active */
+      border-color: #87CEEB; /* Warna border saat active */
+      border-top: 1px solid #87CEEB; /* Border atas saat active */
+      padding-left: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .flatpickr-calendar.inline {
+    transform: scale(1.1);
+    width: 60% !important;
+  }
+}
+
+@media (max-width: 1999px) {
+  .check-availability {
+    width: 300px !important;
+  }
+}
+
+
+/* Mobile View */
+@media (max-width: 768px) {
+  /* Layout Adjustment */
+  .gallery-row {
+      display: flex;
+      flex-direction: column-reverse;
+  }
+
+  .side-bar {
+      display: none;
+  }
+
+  /* Check Availability Section */
+  .check-availability {
+      /* max-width: 390px; */
+      height: auto;
+      margin-bottom: 15px;
+      text-align: center;
+      color: #87CEEB;
+  }
+
+  .check-availability .container {
+      height: auto;
+      padding: 20px;
+    }
+
+    .start_price {
+      font-size: 18px;
+    }
+    .faq-section .btn-link {
+      font-size: 14px;
+      text-align: left;
+    }
+
+  /* Hide gallery layout and show carousel */
+  .gallery-layout {
+      display: none;
+  }
+
+  /* Show mobile carousel */
+  #mobileCarousel {
+      display: block;
+  }
+
+  .carousel-inner img {
+      object-fit: cover;
+      border-radius: 0.5rem;
+      height: 400px;
+  }
+
+  .gallery-layout .gallery-item {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  .gallery-item img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 0.5rem;
+  }
+
+  .carousel-inner .carousel-item img {
+      width: 100%;
+      height: 405px;
+  }
+
+  .carousel-inner img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+  }
+
+  .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .side-bar {
+      order: 1;
+  }
+
+  .faq-section .btn-link:not(.collapsed) {
+      background-color: #87CEEB; /* Warna latar belakang saat active */
+      color: #fff; /* Warna teks saat active */
+      border-color: #87CEEB; /* Warna border saat active */
+      border-top: 1px solid #87CEEB; /* Border atas saat active */
+  }
+
+  .responsive-calendar-inputs {
+        flex-direction: column;
+    }
+
+    .input-group {
+        width: 100%;
+    }
+
+  /* calendar */
+  .calendar-wrapper {
+    width: 500px;
+  }
+
+  .flatpickr-calendar.inline {
+    transform: scale(1.1);
+    width: 65% !important;
+    min-width: 300px !important;
+  }
+
+  /* Ubah orientasi bulan agar vertikal */
+.flatpickr-innerContainer {
+  display: flex !important;
+  flex-direction: row !important; /* Stack bulan ke bawah */
+  gap: 20px; /* Jarak antar bulan */
+}
+
+/* Pastikan bulan tidak terlalu lebar */
+.flatpickr-months {
+  justify-content: center;
+}
+
+.flatpickr-calendar {
+  max-width: 100% !important;
+}
+
+  /* Perkecil ukuran font pada mobile */
+  .flatpickr-day {
+      font-size: 14px;
+  }
+
+  .flatpickr-price {
+      font-size: 7px;
+  }
+
+  p.selectdate_text {
+    text-align: center;
+  }
+  
+  input.selectdate_input {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  /* map */
+    #startBtn {
+    top: auto;
+    bottom: 30px;
+    left: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  #startBtn {
+    bottom: 20px;
+    left: 20px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .calendar-inputs {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+}
+
+@media (max-width: 426px) {
+  #mobileCarousel {
+    max-width: 400px !important;
+  }
+
+  .carousel-inner .carousel-item img {
+    height: 250px;
+  }
+
+  .check-availability {
+    max-width: 420px !important;
+    margin: 0 auto !important;
+  }
+
+  .calendar-wrapper {
+    background-color: transparent;
+    margin-left: -13px;
+  }
+
+  .flatpickr-calendar.inline {
+    transform: scale(0.9) !important;
+    width: 100% !important;
+    min-width: 350px !important;
+  }
+
+  .flatpickr-weekdays {
+    width: 100% !important;
+  }
+
+  .dayContainer {
+    width: 100% !important;
+    /* min-width: 350px !important; */
+    max-width: 250px !important;
+  }
+
+  h4.option-name {
+    font-size: 18px;
+  }
+
+  .select-dates-card {
+    margin-bottom: -65px !important;
+  }
+
+  span.cancel-before {
+    font-size: 13px !important;
+  }
+
+  .btn-book,
+  .btn-cart {
+    padding: 10px 5px !important;
+    width: 50% !important;
+  }
+
+  .review-title {
+    flex-direction: column;
+  }
+
+  .review-star {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 376px) {
+  .calendar-inputs {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  h4.option-name {
+    font-size: 16px;
+  }
+
+  .flatpickr-calendar.inline {
+    transform: scale(0.8) !important;
+    min-width: 400px;
+  }
+
+  .select-dates-card {
+    margin-bottom: -120px !important;
+  }
+
+  span.cancel-before {
+    font-size: 12px !important;
+  }
+
+  .rate_option {
+    max-width: 200px !important;
+  }
+
+  .review-filter {
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  h4.option-name {
+    font-size: 14px;
+  }
+
+  .flatpickr-calendar.inline {
+    transform: scale(0.65) !important;
+  }
+
+  .select-dates-card {
+    margin-bottom: -180px !important;
+  }
+
+  .btn-book,
+  .btn-cart {
+    padding: 5px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* Accordion Styling */
+.accordion-item {
+  margin-bottom: 1rem;
+}
+
+.faq-section .card {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+}
+
+.faq-section .card-header {
+  background: none;
+  padding: 10px 0;
+  border-bottom: none;
+}
+
+.faq-section .btn-link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  color: #333;
+  width: 100%;
+  text-align: left;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-section .btn-link:focus,
+.faq-section .btn-link:hover {
+  text-decoration: none;
+}
+
+.faq-section .card-body {
+  padding: 10px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.faq-section .collapse {
+  transition: all 0.3s ease-in-out;
+}
+
+.faq-question {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: normal;
+  word-break: break-word;
+  font-size: 16px;
+}
+
+.u-accordion__control-icon {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.u-accordion__control-icon .fa-angle-up {
+  display: none;
+}
+
+button[aria-expanded="true"] .fa-angle-down {
+  display: none;
+}
+
+button[aria-expanded="true"] .fa-angle-up {
+  display: inline;
+}
+
+
+/* rental */
+.rental-container {
+  background-color: #87CEEB;
+  border-radius: 15px;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: center;
+  margin-inline: 1px;
+}
+
+.rental-form {
+  display: flex;
+  justify-content: space-between;
+  /* padding: 20px 25px; */
+  border-radius: 8px;
+  width: auto;
+  /* max-width: 900px; */
+  margin: auto;
+}
+.form-group {
+  flex: 1;
+  /* margin: 0 10px; */
+}
+.form-group label {
+  color: #666;
+  display: block;
+  margin-bottom: 5px;
+}
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  /* border-radius: 5px; */
+  padding: 8px 10px;
+}
+.input-wrapper i {
+  color: #87CEEB;
+  margin-right: 8px;
+}
+.input-wrapper input {
+  border: none;
+  background: #fff;
+  font-size: 16px;
+  width: 100%;
+}
+input:focus {
+  outline: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+/* Tooltip wrapper */
+.rateopt-tooltip-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Info icon style */
+.rateopt-icon {
+  font-size: 1rem;
+  color: #87CEEB;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.rateopt-icon:hover {
+  transform: scale(1.2);
+  color: #0b5ed7;
+}
+
+/* Tooltip bubble */
+.rateopt-tooltip {
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  background: #1e1e1e;
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 8px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
+  z-index: 9999;
+}
+
+/* Tooltip visible on hover */
+.rateopt-tooltip-wrapper:hover .rateopt-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  pointer-events: auto;
+  bottom: 150%;
+}
+
+/* Tooltip arrow */
+.rateopt-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #1e1e1e transparent transparent transparent;
+}

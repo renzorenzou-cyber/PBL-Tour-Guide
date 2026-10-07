@@ -1,0 +1,7 @@
+cache/
+public/js/global.js
+app/config/config.ini
+app/config/config.php
+vendor/
+composer.lock
+app/views/layouts/meta.voltapp/config/config.ini
