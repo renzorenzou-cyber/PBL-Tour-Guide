@@ -117,7 +117,7 @@ class MailController extends ControllerBase
             // Konfigurasi Email
             $mail->setFrom($this->config->mailer->username, $this->config->mailer->sender_name);
             $mail->addAddress($email, $name); // Penerima
-            $mail->addBCC('tropialisexoticparadise@gmail.com');
+            $mail->addBCC('...@gmail.com');
         
             // Konten Email
             $mail->isHTML(true); 
@@ -273,7 +273,7 @@ class MailController extends ControllerBase
                             <p>If it is not works, please copy this url and paste it to your browser : '.$link_payment.'</p><p><strong>Note: Please ignore the payment link if you have already made the payment.</strong></p>
                         </div>
                         <div class="detail " style="margin-bottom:1rem;">
-                            <span>Need help? Our support team is ready to assist you at tropialisexoticparadise@gmail.com</span>
+                            <span>Need help? Our support team is ready to assist you at ...@gmail.com</span>
                         </div>
                         <p>Best Regards, </p>
                         <p>Tropialis Team</p>
@@ -339,7 +339,7 @@ class MailController extends ControllerBase
                 // Konfigurasi Email
                 $mail->setFrom($this->config->mailer->username, $this->config->mailer->sender_name);
                 $mail->addAddress($email, $name); // Penerima
-                $mail->addBCC('tropialisexoticparadise@gmail.com');
+                $mail->addBCC('...@gmail.com');
             
                 // Konten Email
                 $mail->isHTML(true); 
@@ -452,7 +452,7 @@ class MailController extends ControllerBase
                                     <span>Your registered email : '.$email.'</span>
                                 </div>
                                 <div class="detail " style="margin-bottom:1rem;">
-                                    <span>Need help? Our support team is ready to assist you at tropialisexoticparadise@gmail.com</span>
+                                    <span>Need help? Our support team is ready to assist you at ...@gmail.com</span>
                                 </div>
 
                             <p>Warm Regards, </p>
@@ -512,7 +512,7 @@ class MailController extends ControllerBase
             // Konfigurasi Email
             $mail->setFrom($this->config->mailer->username, $this->config->mailer->sender_name);
             $mail->addAddress($email, $name); // Penerima
-            $mail->addBCC('tropialisexoticparadise@gmail.com');
+            $mail->addBCC('...@gmail.com');
         
             // Konten Email
             $mail->isHTML(true); 
@@ -629,7 +629,7 @@ class MailController extends ControllerBase
                                 <span>if you did not request a password reset, no action is needed. Your account is secure, but we recomended reviewing your account details for added security</span>
                             </div>
                             <div class="detail " style="margin-bottom:1rem;">
-                                <span>Need help? Our support team is ready to assist you at tropialisexoticparadise@gmail.com</span>
+                                <span>Need help? Our support team is ready to assist you at ...@gmail.com</span>
                             </div>
                             <div class="detail" style="margin-bottom:1rem;">
                                 <span>Stay Connected!</span>
@@ -698,7 +698,7 @@ class MailController extends ControllerBase
                 // Konfigurasi Email
                 $mail->setFrom($this->config->mailer->username, $this->config->mailer->sender_name);
                 $mail->addAddress($email, $name); // Penerima
-                $mail->addBCC('tropialisexoticparadise@gmail.com');
+                $mail->addBCC('...@gmail.com');
             
                 // Konten Email
                 $mail->isHTML(true); 
@@ -821,7 +821,7 @@ class MailController extends ControllerBase
                                 <p>If it is not works, please copy this url and paste it to your browser : '.$login_link.'</p>
                             </div>
                             <div class="detail " style="margin-bottom:1rem;">
-                                <span>Need help? Our support team is ready to assist you at tropialisexoticparadise@gmail.com</span>
+                                <span>Need help? Our support team is ready to assist you at ...@gmail.com</span>
                             </div>
                             <p>Best Regards, </p>
                             <p>Tropialis Team</p>
@@ -914,7 +914,7 @@ class MailController extends ControllerBase
             // Konfigurasi Email
             $mail->setFrom($this->config->mailer->username, $this->config->mailer->sender_name);
             $mail->addAddress($email, $name); // Penerima
-            $mail->addBCC('tropialisexoticparadise@gmail.com');
+            $mail->addBCC('...@gmail.com');
         
             // Konten Email
             $mail->isHTML(true); 
@@ -1025,7 +1025,7 @@ class MailController extends ControllerBase
 
                         <p>If you think this cancellation was made in error or would like to reorder, please contact our support team.</p>
                         <div style="margin-top:30px; margin-bottom:20px;">
-                            <p>Need help? Our support team is ready to assist you at <strong>tropialisexoticparadise@gmail.com</strong></p>
+                            <p>Need help? Our support team is ready to assist you at <strong>...@gmail.com</strong></p>
                             <p>Best regards,<br>The Tropialis Team</p>
                         </div>
                     </div>
@@ -1092,7 +1092,7 @@ class MailController extends ControllerBase
                 // Konfigurasi Email
                 $mail->setFrom($this->config->mailer->username, $this->config->mailer->sender_name);
                 $mail->addAddress($email, $name); // Penerima
-                $mail->addBCC('tropialisexoticparadise@gmail.com');
+                $mail->addBCC('...@gmail.com');
             
                 // Konten Email
                 $mail->isHTML(true); 
@@ -1223,7 +1223,7 @@ class MailController extends ControllerBase
                             </div>
                             <hr>
                             <div class="detail " style="margin-bottom:1rem;">
-                                <span>Need help? Our support team is ready to assist you at tropialisexoticparadise@gmail.com</span>
+                                <span>Need help? Our support team is ready to assist you at ...@gmail.com</span>
                             </div>
                             <p>Best Regards, </p>
                             <p>Tropialis Team</p>
